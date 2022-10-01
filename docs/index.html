@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>¡Hola!</title>
+
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Conquistando errores en R</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="antes.html">Antes de comenzar</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/paocorrales/errores_tutorial-">Repo</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">¡Hola!</h1>
+
+</div>
+
+
+<div id="de-qué-se-trata-este-taller" class="section level3">
+<h3>¿De qué se trata este taller?</h3>
+<p>Debuggear o depurar los errores de tu código puede ser una tarea
+frustrante. Tal vez obtuviste un mensaje de error y hay que
+interpretarlo o tal vez el código devuelve un resultado que no es el
+esperado. Si bien no existe una herramienta o método mágico para
+identificar los errores en un código, depurar errores requiere de un
+proceso sistemático.</p>
+<p>En este tutorial aprenderás a utilizar funciones y herramientas que
+te ayudarán a depurar errores, analizando el código y haciendo preguntas
+necesarias que guien ese análisis. Cómo con cualquier tarea asociada a
+la programación, la depuración de errores es una habilidad que requiere
+práctica, por lo que en el tutorial tendrás la posibilidad de seguir los
+ejemplos, resolver nuevos problemas aplicando las herramientas vistas,
+discutir en grupo y hacer todas las preguntas que tengas.</p>
+<p>Este tutorial está orientado a personas que tienen alguna experiencia
+escribiendo código en R. No importa si programan hace 6 años o 6 meses,
+lo importante es que la sintaxis de R les resulte familiar, en
+particular loops y funciones, y se haya encontrado con errores y
+problemas de código.</p>
+</div>
+<div id="antes-de-taller" class="section level3">
+<h3>Antes de taller</h3>
+<p>Durante el taller usaremos la interfaz de RStudio. No es requisito
+para participar tener experiencia usando RStudio pero si nunca la
+usaste, mi recomendación es que dediques unos minutos a probarla antes
+del taller. Por favor, <a href="antes.html">sigue estas instrucciones
+para prepararte antes del taller</a>.</p>
+</div>
+<div id="agenda-tentativa-del-taller" class="section level3">
+<h3>Agenda tentativa del taller</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Duración</th>
+<th align="left">Temas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">15 min</td>
+<td align="left">Introducción</td>
+</tr>
+<tr class="even">
+<td align="left">5 min</td>
+<td align="left">Presentación del problema a resolver</td>
+</tr>
+<tr class="odd">
+<td align="left">15 min</td>
+<td align="left">Funciones de debugging 1</td>
+</tr>
+<tr class="even">
+<td align="left">15 min</td>
+<td align="left">Ejercicio en grupos pequeños</td>
+</tr>
+<tr class="odd">
+<td align="left">5 min</td>
+<td align="left">Dudas y consultas</td>
+</tr>
+<tr class="even">
+<td align="left">5 min</td>
+<td align="left">Pausa</td>
+</tr>
+<tr class="odd">
+<td align="left">15 min</td>
+<td align="left">Funciones de debugging 2</td>
+</tr>
+<tr class="even">
+<td align="left">15 min</td>
+<td align="left">Ejercicio en grupos pequeños</td>
+</tr>
+<tr class="odd">
+<td align="left">10 min</td>
+<td align="left">Dudas y consultas</td>
+</tr>
+<tr class="even">
+<td align="left">5 min</td>
+<td align="left">Casos especiales de debugging</td>
+</tr>
+<tr class="odd">
+<td align="left">5 min</td>
+<td align="left">Qué hacer cuando todo lo anterior no funciona</td>
+</tr>
+<tr class="even">
+<td align="left">10 min</td>
+<td align="left">Preguntas y cierre</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Pao Corrales</strong></p>
+<p><img src="img/pao_circle.png" alt="Foto de Pao" width="100" height="100" align="left" style="margin:10px"/>
+Paola Corrales. Es estudiante de doctorado en la Universidad de Buenos
+Aires. Estudia ciencias de la atmósfera aplicando técnicas de
+asimilación de datos para mejorar los pronósticos a corto plazo de
+eventos severos en Argentina. Es trainer e instructora de <a
+href="https://carpentries.org/">The Carpentries</a> e instructora
+certificada de <a
+href="https://education.rstudio.com/trainers/people/corrales+paola/">RStudio</a>.
+También ha contribuido a proyectos de traducción de materiales de The
+Carpentries y al libro Teaching Tech Together. Forma parte de Expedición
+Ciencia, una organización sin fines de lucro con sede en Argentina,
+donde dirige proyectos educativos como campamentos y talleres de ciencia
+para estudiantes y profesores de ciencias de primaria y secundaria. Es
+profesora de la Licenciatura y la diplomatura en Ciencias de Datos de la
+Universidad Guillermo Brown. También desarrolla materiales de licencia
+abierta para enseñar y aprender R como “De hojas de cálculo a R”, “R
+para clima” y “Reproducibility with R”.</p>
+<p><a href="https://github.com/paocorrales">paobcorrales.github.io</a> |
+<a href="https://twitter.com/PaobCorrales">@paobcorrales</a></p>
+<div id="licencia" class="section level4">
+<h4>Licencia</h4>
+<p><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+Todos los materiales de este curso en encuentra bajo la licencia
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative
+Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p>Nos inspiramos y nos basamos en los siguientes recursos:</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
