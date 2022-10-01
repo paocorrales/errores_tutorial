@@ -18,7 +18,8 @@ class: center
 ## Hola!
 
 ```{r echo=FALSE, out.width='30%'}
-#knitr::include_graphics("slides/img/pao_circle.png")
+library(countdown)
+knitr::include_graphics(here::here("slides/img/pao_circle.png"))
 ```
 
 @paobcorrales
@@ -41,7 +42,7 @@ class: center
 
 * Errores en código anidado (`mean(sd(random(n)))`)
 
--- 
+--
 
 * Errores en loops y funciones
 
@@ -55,7 +56,7 @@ class: center
 
 Este es un mensaje:
 
-```{r}
+```{r message=TRUE}
 library(data.table)
 ```
 --
@@ -72,7 +73,7 @@ z <- x == y
 
 Éste es un error:
 
-```{r, error=FALSE}
+```{r, error=TRUE}
 date[5]
 ```
 --
@@ -149,10 +150,19 @@ Si tuviste algún problema levantá la mano
 
 
 ---
+class: center, inverse
 
-## Pausa
+# Pausa
 
-Agregar cronometro
+```{r echo=FALSE}
+countdown(minutes = 5, play_sound = TRUE, 
+          left = 0, 
+          right = 0,
+          padding = "50px",
+          margin = "5%",
+          font_size = "6em")
+```
+
 
 ---
 ## Ejercicio 2
