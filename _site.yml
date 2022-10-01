@@ -1,0 +1,14 @@
+navbar:
+  title: "Conquistando errores en R"
+  left:
+    - text: Antes de comenzar
+      href: antes.html
+  right:
+    - text: Repo
+      href: https://github.com/paocorrales/errores_tutorial-
+output_dir: "docs"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
