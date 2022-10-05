@@ -19,6 +19,10 @@ class: center
 
 ```{r echo=FALSE, out.width='30%'}
 library(countdown)
+library(datos)
+library(dplyr)
+library(tidyr)
+
 knitr::include_graphics(here::here("slides/img/pao_circle.png"))
 ```
 
@@ -97,11 +101,16 @@ Para trabajar en RStudio Cloud:
 ## Errores en cadenas de código
 
 ```{r}
-datos::pinguinos
+pinguinos %>% 
+  mutate(dim_pico = largo_pico_mm + alto_pico_mm) %>% 
+  group_by(especie, sexo) %>% 
+  summarise(pico_promedio = mean(dim_pico)) %>% 
+  pivot_wider(names_from = "especie", values_from = c("pico_promdio"))
+  
 ```
 
 * ¿Devuelve un mensaje de error?
-  - ¿Qué dice el error? ¿Mensiona el número de línea o la función que genera problemas? 
+  - ¿Qué dice el error? ¿Menciona el número de línea o la función que genera problemas? 
   
 * ¿El resultado no es el esperado?
   - ¿La variable (un data.frame?) de entrada tiene la pinta que debería tener?
@@ -112,6 +121,11 @@ Si el error no se resuelve, correr las líneas de código de forma incremental s
 
 ## Errores en código anidado
 
+```{r}
+y <- runif(100)
+
+y[y > max(sample(runif(100), 0))]
+```
 
 
 * ¿Devuelve un mensaje de error?
@@ -140,7 +154,7 @@ Necetamos algunas herramientas extras para entender el contexto en el que ocurre
 ## ¿Arrancamos?
 
 
-Si lograste abrir el proyecto de RStudio usá el emoji....
+Si lograste abrir el proyecto de RStudio usá la reacción `r emo::ji("+1")`
 
 Si tuviste algún problema levantá la mano
 
@@ -153,6 +167,8 @@ Si tuviste algún problema levantá la mano
 class: center, inverse
 
 # Pausa
+
+Aprovechá para levantarte de la silla y estirar un poco!
 
 ```{r echo=FALSE}
 countdown(minutes = 5, play_sound = TRUE, 
@@ -173,7 +189,7 @@ countdown(minutes = 5, play_sound = TRUE,
 
 Hay errores testarudos que no se resuelven fácilmente. Otras veces el error está en una función de un paquete y no podemos resolverlo. 
 
-Siempre, siempre está google
+Siempre está google
 
 * Buscar el error (sin nombres de variables o información específica)
 * Hay más opciones en inglés que en español :(
@@ -182,7 +198,7 @@ Siempre, siempre está la comunidad de R para pedir ayuda
 
 * En un slack (RLadies, LatinR, R4DS)
 * Community de RStudio
-* Twitter #RStats, #RStatES
+* Twitter: #RStats, #RStatES
 * StackOverflow
 
 Pero "Me da un error" no es suficiente para entender el error y encontrar una solución. Idealmente necesitamos generar un ejemplo que reproduzca el error y podamos compartir. 
