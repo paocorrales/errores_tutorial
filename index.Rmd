@@ -14,7 +14,7 @@ Este tutorial está orientado a personas que tienen alguna experiencia escribien
 
 ### Antes de taller
 
-Durante el taller usaremos la interfaz de RStudio. No es requisito para participar tener experiencia usando RStudio pero si nunca la usaste, mi recomendación es que dediques unos minutos a probarla antes del taller. Por favor, [sigue estas instrucciones para prepararte antes del taller](antes.html).
+Durante el taller usaremos la interfaz de RStudio. No es requisito para participar tener experiencia usando RStudio pero si nunca la usaste, mi recomendación es que dediques unos minutos a probarla antes del taller. Por favor, [seguí estas instrucciones para prepararte antes del taller](antes.html).
 
 ### Agenda tentativa del taller
 

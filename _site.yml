@@ -5,7 +5,7 @@ navbar:
       href: antes.html
   right:
     - text: Repo
-      href: https://github.com/paocorrales/errores_tutorial-
+      href: https://github.com/paocorrales/errores_tutorial
 output_dir: "docs"
 output:
   html_document:
