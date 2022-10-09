@@ -100,7 +100,7 @@ Para trabajar en RStudio Cloud:
 
 ## Errores en cadenas de código
 
-```{r}
+```{r, error=TRUE}
 pinguinos %>% 
   mutate(dim_pico = largo_pico_mm + alto_pico_mm) %>% 
   group_by(especie, sexo) %>% 
@@ -121,7 +121,7 @@ Si el error no se resuelve, correr las líneas de código de forma incremental s
 
 ## Errores en código anidado
 
-```{r}
+```{r, error=TRUE}
 y <- runif(100)
 
 y[y > max(sample(runif(100), 0))]
