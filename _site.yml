@@ -3,6 +3,8 @@ navbar:
   left:
     - text: Antes de comenzar
       href: antes.html
+    - text: Presentación
+      href: slides/errores-presentacion.html
   right:
     - text: Repo
       href: https://github.com/paocorrales/errores_tutorial
