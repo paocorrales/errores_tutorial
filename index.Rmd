@@ -52,4 +52,5 @@ Nos inspiramos y nos basamos en los siguientes recursos:
 
 Sobre reprex: 
 
+* [Cómo hacer un buen ejemplo reproducible en R](https://eliocamp.github.io/codigo-r/2018/01/buen-ejemplo-reproducible-en-r/) de Elio Campitelli
 * [Help me help you. Creating reproducible examples](https://www.rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/) de Jenny Bryan

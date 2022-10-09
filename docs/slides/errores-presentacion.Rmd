@@ -52,7 +52,7 @@ xaringanExtra::use_extra_styles(
 ## Hola!
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, out.width='30%'}
-knitr::include_graphics(here::here("slides/img/pao_circle.png"))
+knitr::include_graphics("img/pao_circle.png")
 ```
 
 @paobcorrales
@@ -283,7 +283,10 @@ Pero **"Me da un error"** no es suficiente para entender el error y encontrar un
 4. Copia todo en GitHub/Slack/etc.
 5. Esperá.
 
-Para saber más: [https://speakerdeck.com/jennybc/reprex-reproducible-examples-with-r](https://speakerdeck.com/jennybc/reprex-reproducible-examples-with-r)
+Para saber más: 
+
+* [Cómo hacer un buen ejemplo reproducible en R](https://eliocamp.github.io/codigo-r/2018/01/buen-ejemplo-reproducible-en-r/)
+* [Help me help you. Creating reproducible examples](https://www.rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/)
 ---
 
 class: center, inverse, middle
