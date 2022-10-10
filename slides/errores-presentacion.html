@@ -4,12 +4,7 @@
     <title>Conquistando errores con R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Pao Corrales" />
-<<<<<<< HEAD
-    <meta name="date" content="2022-10-10" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
-=======
-    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
->>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <meta name="description" content="Tutorial de debugging creado para LatinR 2022"/>
@@ -32,8 +27,8 @@
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Pao Corrales"/>
     <link href="libs/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <link href="libs/countdown-0.3.5/countdown.css" rel="stylesheet" />
-    <script src="libs/countdown-0.3.5/countdown.js"></script>
+    <link href="libs/countdown-0.4.0/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown-0.4.0/countdown.js"></script>
     <link rel="stylesheet" href="verde.css" type="text/css" />
   </head>
   <body>
@@ -50,11 +45,7 @@ class: center, middle, inverse, title-slide
 ### LatinR 2022
 ]
 .date[
-<<<<<<< HEAD
-### 2022-10-10
-=======
 ### 11 de octubre de 2022
->>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 ]
 
 ---
@@ -68,24 +59,6 @@ class: center
 
 
 ## Hola!
-
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
 
 &lt;img src="img/pao_circle.png" width="30%" /&gt;
 
@@ -147,13 +120,9 @@ library(data.table)
 ## 
 ##     between, first, last
 ```
-<<<<<<< HEAD
---
-=======
 ---
 
 ## Interpretando a R
->>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 
 Éste es un warning o advertencia:
 
@@ -256,39 +225,14 @@ y[y &gt; max(sample(runif(15), 0))]
 ```
 
 ```
-<<<<<<< HEAD
-## Warning in max(sample(runif(100), 0)): no non-missing arguments to max;
-## returning -Inf
-```
-
-```
-##   [1] 0.695789799 0.226568513 0.942722292 0.034868881 0.024867414 0.632793654
-##   [7] 0.909356543 0.801441925 0.692936436 0.280822585 0.719775745 0.403235089
-##  [13] 0.843462880 0.946727662 0.175000990 0.042271053 0.690735403 0.621098206
-##  [19] 0.520708324 0.331249364 0.899239641 0.725356834 0.872089851 0.519074760
-##  [25] 0.066372698 0.732932212 0.860952629 0.385190231 0.426491173 0.054062005
-##  [31] 0.403055255 0.811695808 0.072142329 0.479627509 0.574657215 0.040323266
-##  [37] 0.671473496 0.925540668 0.861404536 0.610247552 0.824268762 0.339985180
-##  [43] 0.050898100 0.059545804 0.504604232 0.355011411 0.252496278 0.479431436
-##  [49] 0.525416071 0.853383273 0.478616228 0.064803746 0.469960386 0.686695110
-##  [55] 0.111782464 0.231703896 0.698025678 0.583353196 0.722165982 0.324617793
-##  [61] 0.408251735 0.004801333 0.705121998 0.367806500 0.305685202 0.600171068
-##  [67] 0.626659061 0.926432641 0.853116958 0.387167544 0.800880091 0.080908843
-##  [73] 0.652164329 0.154417610 0.668681061 0.978966952 0.249473513 0.737085243
-##  [79] 0.246772332 0.879755969 0.329531720 0.721487076 0.931869991 0.511028937
-##  [85] 0.942499588 0.950959804 0.681480745 0.339316125 0.414604943 0.539183980
-##  [91] 0.650701167 0.954790107 0.114243404 0.412785525 0.353209103 0.270603327
-##  [97] 0.653846242 0.361294427 0.013526445 0.546976262
-=======
 ## Warning in max(sample(runif(15), 0)): no non-missing arguments to max; returning
 ## -Inf
 ```
 
 ```
-##  [1] 0.92183918 0.30305806 0.83133459 0.17364782 0.50688197 0.54333211
-##  [7] 0.11438696 0.36826782 0.01198871 0.61741103 0.13840520 0.20051254
-## [13] 0.86670263 0.83195711 0.53848562
->>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
+##  [1] 0.9616173 0.6314868 0.9407907 0.6710005 0.9265230 0.5815495 0.8675454
+##  [8] 0.1610211 0.6610178 0.8258103 0.3235141 0.8334106 0.1625911 0.1769658
+## [15] 0.7512668
 ```
 
 
@@ -316,9 +260,9 @@ Necetamos algunas herramientas extras para entender el contexto en el que ocurre
 ---
 class: center, middle
 
-&gt; Encontrar tu bicho es un proceso de confirmación de las muchas cosas que crees que son ciertas, hasta que encuentras una que no lo es.
+&gt; ### Encontrar tu bicho es un proceso de confirmación de las muchas cosas que crees que son ciertas, hasta que encuentras una que no lo es.
 &gt;
-&gt; -Norm Matloff
+&gt; #### Norm Matloff
 
 ---
 
@@ -331,7 +275,41 @@ Si tuviste algún problema levantá la mano ✋
 
 ---
 
+## Algunas funciones
+
+* `debugonce()`: permite explorar de manera interactiva el entorno creado en una función la próxima vez que ejecutemos esa función. Tendremos acceso a las variables y el "estado" del código en cada momento.
+
+--
+
+* `debug()`: es similar a la anterior pero se activará *cada vez* que ejecutemos la función. 
+
+--
+
+* `options(error = recover)`: en caso de encontrase con un error, devuelve el listado de pasos previos y permite interactuar con el código. 
+
+
+---
+
 ## Ejercicio 1
+
+Ahora les toca a ustedes!
+
+* Abrir el archivo `palindromos.R` disponible en el proyecto.
+* Cargar todas las funciones usando el botón Source o corriendo el código.
+
+La función `palindromo_grande()` busca el palíndromo más grande que se genera al multiplicar 2 números de 3 dígitos. Un palíndromo (o capicúa) es un número que tiene la misma pinta si se lee de derecha a izquierda o de izquierda a derecha. Por ejemplo 24542.
+
+* La función `palindromo_grande()`, ¿da el resultado esperado?
+
+Usando la función `debugonce()` aplicada a `palindromo()`:
+
+* Exploren el funcionamiento del código y las variables internas. 
+* ¿Las variables tienen el valor esperado?
+
+**Objetivo:**
+
+Encontrar la ubicación del error. Si entienden cual es el problema, pueden arreglarlo. 
+
 
 
 ---
@@ -343,12 +321,8 @@ background-size: contain
 
 Aprovechá para levantarte de la silla y estirar un poco!
 
-<<<<<<< HEAD
-<div class="countdown" id="timer_4fa69439" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;left:0;margin:5%;padding:50px;font-size:6em;">
+<div class="countdown" id="timer_0456a7a5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;left:0;margin:5%;padding:50px;font-size:4em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-=======
-<div class="countdown" id="timer_634348ac" style="right:0;bottom:0;left:0;margin:5%;padding:50px;font-size:4em;" data-audio="true" data-warnwhen="0">
->>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 

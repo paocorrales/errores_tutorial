@@ -207,9 +207,9 @@ Necetamos algunas herramientas extras para entender el contexto en el que ocurre
 ---
 class: center, middle
 
-> Encontrar tu bicho es un proceso de confirmación de las muchas cosas que crees que son ciertas, hasta que encuentras una que no lo es.
+> ### Encontrar tu bicho es un proceso de confirmación de las muchas cosas que crees que son ciertas, hasta que encuentras una que no lo es.
 >
-> -Norm Matloff
+> #### Norm Matloff
 
 ---
 
@@ -222,7 +222,41 @@ Si tuviste algún problema levantá la mano `r emo::ji("raised_hand")`
 
 ---
 
+## Algunas funciones
+
+* `debugonce()`: permite explorar de manera interactiva el entorno creado en una función la próxima vez que ejecutemos esa función. Tendremos acceso a las variables y el "estado" del código en cada momento.
+
+--
+
+* `debug()`: es similar a la anterior pero se activará *cada vez* que ejecutemos la función. 
+
+--
+
+* `options(error = recover)`: en caso de encontrase con un error, devuelve el listado de pasos previos y permite interactuar con el código. 
+
+
+---
+
 ## Ejercicio 1
+
+Ahora les toca a ustedes!
+
+* Abrir el archivo `palindromos.R` disponible en el proyecto.
+* Cargar todas las funciones usando el botón Source o corriendo el código.
+
+La función `palindromo_grande()` busca el palíndromo más grande que se genera al multiplicar 2 números de 3 dígitos. Un palíndromo (o capicúa) es un número que tiene la misma pinta si se lee de derecha a izquierda o de izquierda a derecha. Por ejemplo 24542.
+
+* La función `palindromo_grande()`, ¿da el resultado esperado?
+
+Usando la función `debugonce()` aplicada a `palindromo()`:
+
+* Exploren el funcionamiento del código y las variables internas. 
+* ¿Las variables tienen el valor esperado?
+
+**Objetivo:**
+
+Encontrar la ubicación del error. Si entienden cual es el problema, pueden arreglarlo. 
+
 
 
 ---
