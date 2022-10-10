@@ -150,6 +150,13 @@ Acá la estrategía es correr el código de adentro hacía afuera y revisar:
 Necetamos algunas herramientas extras para entender el contexto en el que ocurre el error y poder resolverlo. 
 
 ---
+class: center, middle
+
+> Encontrar tu bicho es un proceso de confirmación de las muchas cosas que crees que son ciertas, hasta que encuentras una que no lo es.
+>
+> -Norm Matloff
+
+---
 
 ## ¿Arrancamos?
 
