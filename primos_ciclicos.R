@@ -21,6 +21,7 @@ extraer_digitos <- function(num) {
   num_v <- c()
   for (n in 1:n_digitos) {
     ni <- n_digitos+1-n
+    # remueve los digitos de la izquierda, luego los de la derecha
     num_v[n] <- (num %% (10^ni)) %/% (10^(ni-1))
   }
   
