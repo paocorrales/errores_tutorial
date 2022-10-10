@@ -50,6 +50,11 @@ Todos los materiales de este curso en encuentra bajo la licencia <a rel="license
 
 Nos inspiramos y nos basamos en los siguientes recursos:
 
+Sobre debugging:
+
+* [Advance R, Chapter 22](https://adv-r.hadley.nz/debugging.html) de Hadley Wickham
+* [Debugging code in RStudio](https://www.rstudio.com/resources/webinars/programming-part-2-debugging-code-in-rstudio/) by Garrett Grolemund
+
 Sobre reprex: 
 
 * [Cómo hacer un buen ejemplo reproducible en R](https://eliocamp.github.io/codigo-r/2018/01/buen-ejemplo-reproducible-en-r/) de Elio Campitelli
