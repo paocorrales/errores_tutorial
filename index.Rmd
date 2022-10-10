@@ -5,7 +5,7 @@ output: html_document
 
 ### ¿De qué se trata este taller?
 
-Debuggear o depurar los errores de tu código puede ser una tarea frustrante. Tal vez obtuviste un mensaje de error y hay que interpretarlo o tal vez el código devuelve un resultado que no es el esperado. Si bien no existe una herramienta o método mágico para identificar los errores en un código, depurar errores requiere de un proceso sistemático.
+<img src="img/ladybug.png" alt="Ilustración de una vaquita de San Antonio" width="200" height="200" align="right" style="margin:10px"/>Debuggear o depurar los errores de tu código puede ser una tarea frustrante. Tal vez obtuviste un mensaje de error y hay que interpretarlo o tal vez el código devuelve un resultado que no es el esperado. Si bien no existe una herramienta o método mágico para identificar los errores en un código, depurar errores requiere de un proceso sistemático.
 
 En este tutorial aprenderás a utilizar funciones y herramientas que te ayudarán a depurar errores, analizando el código y haciendo preguntas necesarias que guien ese análisis. Cómo con cualquier tarea asociada a la programación, la depuración de errores es una habilidad que requiere práctica, por lo que en el tutorial tendrás la posibilidad de seguir los ejemplos, resolver nuevos problemas aplicando las herramientas vistas, discutir en grupo y hacer todas las preguntas que tengas. 
 
@@ -16,7 +16,7 @@ Este tutorial está orientado a personas que tienen alguna experiencia escribien
 
 Durante el taller usaremos la interfaz de RStudio. No es requisito para participar tener experiencia usando RStudio pero si nunca la usaste, mi recomendación es que dediques unos minutos a probarla antes del taller. Por favor, [seguí estas instrucciones para prepararte antes del taller](antes.html).
 
-### Agenda tentativa del taller
+### Agenda tentativa del taller 
 
 |Duración |Temas|
 |:---|:----------|
@@ -49,3 +49,8 @@ ___
 Todos los materiales de este curso en encuentra bajo la licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 Nos inspiramos y nos basamos en los siguientes recursos:
+
+Sobre reprex: 
+
+* [Cómo hacer un buen ejemplo reproducible en R](https://eliocamp.github.io/codigo-r/2018/01/buen-ejemplo-reproducible-en-r/) de Elio Campitelli
+* [Help me help you. Creating reproducible examples](https://www.rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/) de Jenny Bryan

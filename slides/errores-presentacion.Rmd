@@ -1,13 +1,14 @@
 ---
 title: "Conquistando errores con R"
 author: "Pao Corrales"
-date: "`r Sys.Date()`"
+institute: "LatinR 2022"
+date: "11 de octubre de 2022"
 output:
   xaringan::moon_reader:
     css: [default, "verde.css", default-fonts]
     lib_dir: libs
     nature:
-      highlightStyle: github
+      highlightStyle: solarized-light
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9'
@@ -15,24 +16,54 @@ output:
 
 class: center
 
-## Hola!
 
-```{r echo=FALSE, out.width='30%'}
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Tutorial de debugging creado para LatinR 2022",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "paocorrales/errores_tutorial") %>% 
+  meta_social(
+    title = "Conquistando errores con R",
+    url = "https://paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html",
+    image = "https://paocorrales.github.io/errores_tutorial/slides/img/ladybug.png",
+    image_alt = "Tutorial Conquistando errores con R",
+    og_type = "website",
+    og_author = "Pao Corrales",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@paobcorrales"
+  )
+```
+
+```{r xaringan-extra-styles, include=FALSE}
 library(countdown)
 library(datos)
 library(dplyr)
 library(tidyr)
 
-knitr::include_graphics(here::here("slides/img/pao_circle.png"))
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,       
+  mute_unhighlighted_code = TRUE
+)
+```
+
+## Hola!
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, out.width='30%'}
+knitr::include_graphics("img/pao_circle.png")
 ```
 
 @paobcorrales
 
 [paocorrales.github.io](https://paocorrales.github.io/)
 
+
 ---
 
 ## Mapa de ruta
+
 
 --
 
@@ -54,6 +85,13 @@ knitr::include_graphics(here::here("slides/img/pao_circle.png"))
 
 * Qué hacer cuando todo lo anterior no funciona
 
+--
+
+#### Estos materiales
+
+Página web: [paocorrales.github.io/errores_tutorial/](https://paocorrales.github.io/errores_tutorial/)
+
+Estas slides: [paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html](https://paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html)
 ---
 
 ## Interpretando a R
@@ -63,7 +101,9 @@ Este es un mensaje:
 ```{r message=TRUE}
 library(data.table)
 ```
---
+---
+
+## Interpretando a R
 
 Éste es un warning o advertencia:
 
@@ -73,7 +113,9 @@ y <- c(1, 2, 3, 4, 5)
 
 z <- x == y
 ```
---
+---
+
+## Interpretando a R
 
 Éste es un error:
 
@@ -81,6 +123,15 @@ z <- x == y
 date[5]
 ```
 --
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+------------------------------------------------------------
 
 R y RStudio necesitan usar distintos colores para mensajes, advertencias y errores. 
 
@@ -90,11 +141,15 @@ Mientras tanto, rojo/naranja no implica necesariamente error!
 
 ## Antes de continuar... vayamos preparando R
 
-Para trabajar localmente:
+Para trabajar localmente `r emo::ji("computer")`:
 
-Para trabajar en RStudio Cloud: 
+Para trabajar en RStudio Cloud `r emo::ji("cloud")`: 
 
-¿Dudas? ¿Problemas? Escribilos en el chat y te ayudamos!
+&nbsp;
+&nbsp;
+
+
+`r emo::ji("point_right")` ¿Dudas? ¿Problemas? Escribilos en el chat y te ayudamos!
 
 ---
 
@@ -122,9 +177,9 @@ Si el error no se resuelve, correr las líneas de código de forma incremental s
 ## Errores en código anidado
 
 ```{r, error=TRUE}
-y <- runif(100)
+y <- runif(15)
 
-y[y > max(sample(runif(100), 0))]
+y[y > max(sample(runif(15), 0))]
 ```
 
 
@@ -163,7 +218,7 @@ class: center, middle
 
 Si lograste abrir el proyecto de RStudio usá la reacción `r emo::ji("+1")`
 
-Si tuviste algún problema levantá la mano
+Si tuviste algún problema levantá la mano `r emo::ji("raised_hand")`
 
 ---
 
@@ -171,7 +226,9 @@ Si tuviste algún problema levantá la mano
 
 
 ---
-class: center, inverse
+class: center, inverse, middle
+background-image: url("img/ladybug.png")
+background-size: contain
 
 # Pausa
 
@@ -181,9 +238,12 @@ Aprovechá para levantarte de la silla y estirar un poco!
 countdown(minutes = 5, play_sound = TRUE, 
           left = 0, 
           right = 0,
+          color_background = "#26a69a",
+          color_running_text = "white",
+          color_finished_text = "white",
           padding = "50px",
           margin = "5%",
-          font_size = "6em")
+          font_size = "4em")
 ```
 
 
@@ -196,26 +256,48 @@ countdown(minutes = 5, play_sound = TRUE,
 
 Hay errores testarudos que no se resuelven fácilmente. Otras veces el error está en una función de un paquete y no podemos resolverlo. 
 
-Siempre está google
+Siempre está google:
 
 * Buscar el error (sin nombres de variables o información específica)
 * Hay más opciones en inglés que en español :(
 
-Siempre, siempre está la comunidad de R para pedir ayuda
+Pero siempre, siempre está la comunidad de R para pedir ayuda:
 
 * En un slack (RLadies, LatinR, R4DS)
 * Community de RStudio
 * Twitter: #RStats, #RStatES
 * StackOverflow
 
-Pero "Me da un error" no es suficiente para entender el error y encontrar una solución. Idealmente necesitamos generar un ejemplo que reproduzca el error y podamos compartir. 
+Pero **"Me da un error"** no es suficiente para entender el error y encontrar una solución. Idealmente necesitamos generar un ejemplo que reproduzca el error y podamos compartir. 
 
 ---
 
-## Regex
+## Reprex (**re**producible **ex**ample)
 
-Y si no es posible, igual necesitamos dar toda la información que tengamos. 
+* El código debe ser autocontenido.
+* Es preferible usar datos que vienen con R o generados sintéticamente.
+* Incluí solo lo necesario.
+* Respetá la computadora de tus colegas.
+* Incluye la salida que genera el código.
 
+
+### ¿Cómo se usa?
+
+0. Adaptá tu código para que sea reproducible y autocontenido.
+1. Copiá el código necesario.
+2. Corré `reprex()`.
+3. Revisá la salida localmente.
+4. Copia todo en GitHub/Slack/etc.
+5. Esperá.
+
+Para saber más: 
+
+* [Cómo hacer un buen ejemplo reproducible en R](https://eliocamp.github.io/codigo-r/2018/01/buen-ejemplo-reproducible-en-r/)
+* [Help me help you. Creating reproducible examples](https://www.rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/)
 ---
 
-## ¿Dudas?
+class: center, inverse, middle
+background-image: url("img/ladybug.png")
+background-size: contain
+
+# ¿Dudas?

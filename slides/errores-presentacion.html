@@ -4,12 +4,36 @@
     <title>Conquistando errores con R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Pao Corrales" />
+<<<<<<< HEAD
     <meta name="date" content="2022-10-10" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+=======
+    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+>>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
-    <link href="libs/countdown-0.4.0/countdown.css" rel="stylesheet" />
-    <script src="libs/countdown-0.4.0/countdown.js"></script>
+    <meta name="description" content="Tutorial de debugging creado para LatinR 2022"/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="paocorrales/errores_tutorial"/>
+    <meta name="twitter:title" content="Conquistando errores con R"/>
+    <meta name="twitter:description" content="Tutorial de debugging creado para LatinR 2022"/>
+    <meta name="twitter:url" content="https://paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html"/>
+    <meta name="twitter:image" content="https://paocorrales.github.io/errores_tutorial/slides/img/ladybug.png"/>
+    <meta name="twitter:image:alt" content="Tutorial Conquistando errores con R"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@paobcorrales"/>
+    <meta name="twitter:site" content="@paobcorrales"/>
+    <meta property="og:title" content="Conquistando errores con R"/>
+    <meta property="og:description" content="Tutorial de debugging creado para LatinR 2022"/>
+    <meta property="og:url" content="https://paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html"/>
+    <meta property="og:image" content="https://paocorrales.github.io/errores_tutorial/slides/img/ladybug.png"/>
+    <meta property="og:image:alt" content="Tutorial Conquistando errores con R"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Pao Corrales"/>
+    <link href="libs/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="libs/countdown-0.3.5/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown-0.3.5/countdown.js"></script>
     <link rel="stylesheet" href="verde.css" type="text/css" />
   </head>
   <body>
@@ -22,14 +46,26 @@ class: center, middle, inverse, title-slide
 .author[
 ### Pao Corrales
 ]
+.institute[
+### LatinR 2022
+]
 .date[
+<<<<<<< HEAD
 ### 2022-10-10
+=======
+### 11 de octubre de 2022
+>>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 ]
 
 ---
 
 
 class: center
+
+
+
+
+
 
 ## Hola!
 
@@ -57,9 +93,11 @@ class: center
 
 [paocorrales.github.io](https://paocorrales.github.io/)
 
+
 ---
 
 ## Mapa de ruta
+
 
 --
 
@@ -81,6 +119,13 @@ class: center
 
 * Qué hacer cuando todo lo anterior no funciona
 
+--
+
+#### Estos materiales
+
+Página web: [paocorrales.github.io/errores_tutorial/](https://paocorrales.github.io/errores_tutorial/)
+
+Estas slides: [paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html](https://paocorrales.github.io/errores_tutorial/slides/errores-presentacion.html)
 ---
 
 ## Interpretando a R
@@ -102,7 +147,13 @@ library(data.table)
 ## 
 ##     between, first, last
 ```
+<<<<<<< HEAD
 --
+=======
+---
+
+## Interpretando a R
+>>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 
 Éste es un warning o advertencia:
 
@@ -118,7 +169,9 @@ z &lt;- x == y
 ## Warning in x == y: longer object length is not a multiple of shorter object
 ## length
 ```
---
+---
+
+## Interpretando a R
 
 Éste es un error:
 
@@ -132,6 +185,15 @@ date[5]
 ```
 --
 
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+
+------------------------------------------------------------
+
 R y RStudio necesitan usar distintos colores para mensajes, advertencias y errores. 
 
 Mientras tanto, rojo/naranja no implica necesariamente error!
@@ -140,11 +202,15 @@ Mientras tanto, rojo/naranja no implica necesariamente error!
 
 ## Antes de continuar... vayamos preparando R
 
-Para trabajar localmente:
+Para trabajar localmente 💻:
 
-Para trabajar en RStudio Cloud: 
+Para trabajar en RStudio Cloud ☁️: 
 
-¿Dudas? ¿Problemas? Escribilos en el chat y te ayudamos!
+&amp;nbsp;
+&amp;nbsp;
+
+
+👉 ¿Dudas? ¿Problemas? Escribilos en el chat y te ayudamos!
 
 ---
 
@@ -184,12 +250,13 @@ Si el error no se resuelve, correr las líneas de código de forma incremental s
 
 
 ```r
-y &lt;- runif(100)
+y &lt;- runif(15)
 
-y[y &gt; max(sample(runif(100), 0))]
+y[y &gt; max(sample(runif(15), 0))]
 ```
 
 ```
+<<<<<<< HEAD
 ## Warning in max(sample(runif(100), 0)): no non-missing arguments to max;
 ## returning -Inf
 ```
@@ -212,6 +279,16 @@ y[y &gt; max(sample(runif(100), 0))]
 ##  [85] 0.942499588 0.950959804 0.681480745 0.339316125 0.414604943 0.539183980
 ##  [91] 0.650701167 0.954790107 0.114243404 0.412785525 0.353209103 0.270603327
 ##  [97] 0.653846242 0.361294427 0.013526445 0.546976262
+=======
+## Warning in max(sample(runif(15), 0)): no non-missing arguments to max; returning
+## -Inf
+```
+
+```
+##  [1] 0.92183918 0.30305806 0.83133459 0.17364782 0.50688197 0.54333211
+##  [7] 0.11438696 0.36826782 0.01198871 0.61741103 0.13840520 0.20051254
+## [13] 0.86670263 0.83195711 0.53848562
+>>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 ```
 
 
@@ -250,7 +327,7 @@ class: center, middle
 
 Si lograste abrir el proyecto de RStudio usá la reacción 👍
 
-Si tuviste algún problema levantá la mano
+Si tuviste algún problema levantá la mano ✋
 
 ---
 
@@ -258,14 +335,20 @@ Si tuviste algún problema levantá la mano
 
 
 ---
-class: center, inverse
+class: center, inverse, middle
+background-image: url("img/ladybug.png")
+background-size: contain
 
 # Pausa
 
 Aprovechá para levantarte de la silla y estirar un poco!
 
+<<<<<<< HEAD
 <div class="countdown" id="timer_4fa69439" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;left:0;margin:5%;padding:50px;font-size:6em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+=======
+<div class="countdown" id="timer_634348ac" style="right:0;bottom:0;left:0;margin:5%;padding:50px;font-size:4em;" data-audio="true" data-warnwhen="0">
+>>>>>>> 0bb4e9d409ace6dd833f6f48aa26f2e291accbb1
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -279,34 +362,56 @@ Aprovechá para levantarte de la silla y estirar un poco!
 
 Hay errores testarudos que no se resuelven fácilmente. Otras veces el error está en una función de un paquete y no podemos resolverlo. 
 
-Siempre está google
+Siempre está google:
 
 * Buscar el error (sin nombres de variables o información específica)
 * Hay más opciones en inglés que en español :(
 
-Siempre, siempre está la comunidad de R para pedir ayuda
+Pero siempre, siempre está la comunidad de R para pedir ayuda:
 
 * En un slack (RLadies, LatinR, R4DS)
 * Community de RStudio
 * Twitter: #RStats, #RStatES
 * StackOverflow
 
-Pero "Me da un error" no es suficiente para entender el error y encontrar una solución. Idealmente necesitamos generar un ejemplo que reproduzca el error y podamos compartir. 
+Pero **"Me da un error"** no es suficiente para entender el error y encontrar una solución. Idealmente necesitamos generar un ejemplo que reproduzca el error y podamos compartir. 
 
 ---
 
-## Regex
+## Reprex (**re**producible **ex**ample)
 
-Y si no es posible, igual necesitamos dar toda la información que tengamos. 
+* El código debe ser autocontenido.
+* Es preferible usar datos que vienen con R o generados sintéticamente.
+* Incluí solo lo necesario.
+* Respetá la computadora de tus colegas.
+* Incluye la salida que genera el código.
 
+
+### ¿Cómo se usa?
+
+0. Adaptá tu código para que sea reproducible y autocontenido.
+1. Copiá el código necesario.
+2. Corré `reprex()`.
+3. Revisá la salida localmente.
+4. Copia todo en GitHub/Slack/etc.
+5. Esperá.
+
+Para saber más: 
+
+* [Cómo hacer un buen ejemplo reproducible en R](https://eliocamp.github.io/codigo-r/2018/01/buen-ejemplo-reproducible-en-r/)
+* [Help me help you. Creating reproducible examples](https://www.rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/)
 ---
 
-## ¿Dudas?
+class: center, inverse, middle
+background-image: url("img/ladybug.png")
+background-size: contain
+
+# ¿Dudas?
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "solarized-light",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9"

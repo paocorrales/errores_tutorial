@@ -1,0 +1,12 @@
+/*----------LOGO above TOC---------*/
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 170px;
+  margin: 0em 2px 2px 2px;
+  background-image: url("img/ladybug.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
