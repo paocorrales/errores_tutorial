@@ -32,8 +32,10 @@ generar_ciclicos <- function(num) {
   
   num_v <- extraer_digitos(num)
   ns <- seq_along(num_v)
+  
   for (i in ns[-1]) {
     num[i] <- as.numeric(paste0(num_v[ns[c(i:length(ns), 1:(i-1))]], collapse = ""))
+   # browser()
   }
   return(num)
 }
