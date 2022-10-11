@@ -327,7 +327,7 @@ Siempre está google:
 
 * Buscar el error (sin nombres de variables o información específica)
 * Hay más opciones en inglés que en español :(  
-  Podés cambiar el idioma con `Sys.getenv(LANGUAGE = "en_US")` y correr el código de nuevo para obtener el mensaje en inglés. 
+  Podés cambiar el idioma con `Sys.setenv(LANGUAGE = "en_US")` y correr el código de nuevo para obtener el mensaje en inglés. 
 
 Pero siempre, siempre está la comunidad de R para pedir ayuda:
 
