@@ -201,6 +201,7 @@ Acá la estrategía es correr el código de adentro hacía afuera y revisar:
 * Puede ser más complejo encontrar el error porque 
   - el código es más complejo
   - el código se corre en bloque, en vez de línea por línea
+  - el error puede ocurrir sólo en alguna iteración en particular
   
 Necetamos algunas herramientas extras para entender el contexto en el que ocurre el error y poder resolverlo. 
 
