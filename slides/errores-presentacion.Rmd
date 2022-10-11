@@ -237,7 +237,7 @@ Si tuviste algún problema levantá la mano `r emo::ji("raised_hand")`
 
 --
 
-* `browser()`: la ejecución del código para cuando encuentra la función `browser()` permitiendo trabajar interactivamente en el ambiente generado por la función o código.
+* `browser()`: la ejecución del código se detiene cuando encuentra la función `browser()` permitiendo trabajar interactivamente en el ambiente generado por la función o código.
 
 ---
 
