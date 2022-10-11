@@ -179,7 +179,7 @@ Si el error no se resuelve, correr las líneas de código de forma incremental s
 ```{r, error=TRUE}
 y <- runif(15)
 
-y[y > max(sample(runif(15), 0))]
+y[y > max(sample(runif(15) 0))]
 ```
 
 
