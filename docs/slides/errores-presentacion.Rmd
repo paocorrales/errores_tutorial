@@ -141,9 +141,9 @@ Mientras tanto, rojo/naranja no implica necesariamente error!
 
 ## Antes de continuar... vayamos preparando R
 
-Para trabajar localmente `r emo::ji("computer")`:
+Para trabajar localmente `r emo::ji("computer")`: http://tiny.cc/proyecto-debugging
 
-Para trabajar en RStudio Cloud `r emo::ji("cloud")`: 
+Para trabajar en RStudio Cloud `r emo::ji("cloud")`: https://rstudio.cloud/content/4706056
 
 &nbsp;
 &nbsp;
@@ -205,6 +205,13 @@ Acá la estrategía es correr el código de adentro hacía afuera y revisar:
 Necetamos algunas herramientas extras para entender el contexto en el que ocurre el error y poder resolverlo. 
 
 ---
+class: center, middle
+
+> ### Encontrar tu bicho es un proceso de confirmación de las muchas cosas que crees que son ciertas, hasta que encuentras una que no lo es.
+>
+> #### Norm Matloff
+
+---
 
 ## ¿Arrancamos?
 
@@ -215,10 +222,46 @@ Si tuviste algún problema levantá la mano `r emo::ji("raised_hand")`
 
 ---
 
-## Ejercicio 1
+## Algunas funciones
 
+* `debugonce()`: permite explorar de manera interactiva el entorno creado en una función la próxima vez que ejecutemos esa función. Tendremos acceso a las variables y el "estado" del código en cada momento.
+
+--
+
+* `debug()`: es similar a la anterior pero se activará *cada vez* que ejecutemos la función. 
+
+--
+
+* `options(error = recover)`: en caso de encontrase con un error, devuelve el listado de pasos previos y permite interactuar con el código. 
+
+--
+
+* `browser()`: la ejecución del código para cuando encuentra la función `browser()` permitiendo trabajar interactivamente en el ambiente generado por la función o código.
 
 ---
+
+## Ejercicio 1
+
+Ahora les toca a ustedes!
+
+* Abrir el archivo `palindromos.R` disponible en el proyecto.
+* Cargar todas las funciones usando el botón Source o corriendo el código.
+
+La función `palindromo_grande()` busca el palíndromo más grande que se genera al multiplicar 2 números de 3 dígitos. Un palíndromo (o capicúa) es un número que tiene la misma pinta si se lee de derecha a izquierda o de izquierda a derecha. Por ejemplo 24542.
+
+* La función `palindromo_grande()`, ¿da el resultado esperado?
+
+Usando la función `debugonce()` aplicada a `palindromo()`:
+
+* Exploren el funcionamiento del código y las variables internas. 
+* ¿Las variables tienen el valor esperado?
+
+**Objetivo:**
+
+Encontrar la ubicación del error. Si entienden cual es el problema, pueden arreglarlo. 
+
+---
+
 class: center, inverse, middle
 background-image: url("img/ladybug.png")
 background-size: contain
@@ -241,8 +284,38 @@ countdown(minutes = 5, play_sound = TRUE,
 
 
 ---
+
+
+## Algunas funciones
+
+* “Show traceback”: Muestra el “paso a paso” del código. Cuando llamamos a varias funciones, muestra en que orden son llamadas. Se lee de abajo para arriba.
+
+--
+
+* `traceback()`: es la función que corre por debajo de la mesa cuando usamos "Show traceback". También sirve cuando no estamos dentro de RStudio. 
+
+--
+
+* `rlang::last_trace()`: También muestra el "paso a paso" del código. El orden es al revés que con `traceback()`.
+
+---
+
 ## Ejercicio 2
 
+Ahora les toca a ustedes!
+
+* Abrir el archivo `cor_negativa.R` disponible en el proyecto.
+* Cargar todas las funciones usando el botón Source o corriendo el código.
+
+El código devolverá un mensaje de error cuando prueben la función usando el código de prueba que está al final del archivo. 
+
+* Si corrieron las funciones una a una, no aparecerá el botón que muestra el traceback o la opción para correr el código nuevamente en modo debugging. Tendrán que usar `traceback()` y `debugonce()`.
+
+* Si hicieron source del código autmáticamente veran los botenes "Show Traceback" y "Rerun with Debug"
+
+**Objetivo:**
+
+Encontrar la ubicación del error. Si entienden cual es el problema, pueden arreglarlo. 
 ---
 
 ## Qué hacer cuando todo lo anterior no funciona
