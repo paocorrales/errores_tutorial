@@ -233,7 +233,7 @@ Si tuviste algún problema levantá la mano `r emo::ji("raised_hand")`
 
 --
 
-* `options(error = recover)`: en caso de encontrase con un error, devuelve el listado de pasos previos y permite interactuar con el código. 
+* `options(error = recover)`: en caso de encontrase con un error, devuelve el listado de pasos previos y permite interactuar con el código. (Se revierte con `options(error = NULL)`.)
 
 --
 
