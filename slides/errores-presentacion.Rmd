@@ -229,7 +229,7 @@ Si tuviste algún problema levantá la mano `r emo::ji("raised_hand")`
 
 --
 
-* `debug()`: es similar a la anterior pero se activará *cada vez* que ejecutemos la función. 
+* `debug()`: es similar a la anterior pero se activará *cada vez* que ejecutemos la función. Para desactivar la función usamos `undebug()`.
 
 --
 
