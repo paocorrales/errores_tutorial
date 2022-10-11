@@ -71,7 +71,7 @@ knitr::include_graphics("img/pao_circle.png")
 
 --
 
-* Errores en cadenas de código (team ` %>% ` o `|`)
+* Errores en cadenas de código (team ` %>% ` o `|>`)
 
 --
 
