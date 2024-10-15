@@ -7,7 +7,7 @@ get_digito <- function(num, n) {
 # Revisa si un numero positivo es un palindromo
 palindromo <- function(num) {
   digitos <- floor(log(num, 10)) + 1
-  for (x in 1:((digits %/% 2))) {
+  for (x in 1:((digitos %/% 2))) {
     digito1 <- get_digito(num, x)
     digito2 <- get_digito(num, (digits + 1) - x)
     if (digito1 != digito2)
