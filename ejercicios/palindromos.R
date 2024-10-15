@@ -9,7 +9,7 @@ palindromo <- function(num) {
   digitos <- floor(log(num, 10)) + 1
   for (x in 1:((digitos %/% 2))) {
     digito1 <- get_digito(num, x)
-    digito2 <- get_digito(num, (digits + 1) - x)
+    digito2 <- get_digito(num, (digitos + 1) - x)
     if (digito1 != digito2)
       return(FALSE)
   }
