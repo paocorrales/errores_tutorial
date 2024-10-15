@@ -1,7 +1,7 @@
 es_primo <- function(num) {
   
   primo <- 1 # 0 == FALSE
-  if (num > 1) {
+  if (num < 1) {   # num > 1
     for (i in 2:sqrt(num)) {
       if ((num %% i) == 0) { 
         primo <- 0
@@ -20,9 +20,9 @@ extraer_digitos <- function(num) {
   n_digitos <- floor(log10(num)) + 1
   num_v <- c()
   for (n in 1:n_digitos) {
-    ni <- n_digitos+1-n
+    ni <- n_digitos - n # n_digitos + 1 - n
     # remueve los digitos de la izquierda, luego los de la derecha
-    num_v[n] <- (num %% (10^ni)) %/% (10^(ni-1))
+    num_v[n] <- (num %% (10^ni)) %/% (10^(ni - 1))
   }
   
   return(num_v)
